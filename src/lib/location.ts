@@ -8,10 +8,17 @@ export const poconosLocation = {
   country: "USA",
   region: "Pocono Mountains",
   /** WGS84 — 19 Mountain Crest Dr, Lake Harmony Estates */
-  lat: 41.0475,
-  lng: -75.6444,
-  mapZoom: 18,
-  mapFlyZoom: 17,
+  propertyLat: 41.0475,
+  propertyLng: -75.6444,
+  /** WGS84 — Lake Harmony reservoir (map camera center) */
+  lakeLat: 41.0623,
+  lakeLng: -75.6066,
+  /** Final zoom — whole lake + shoreline context */
+  mapZoom: 14,
+  /** Initial map load before fly-in animation */
+  mapFlyZoom: 13,
+  /** Wide starting zoom for the cinematic fly-in */
+  mapFlyStartZoom: 11,
   get fullAddress() {
     return `${this.street}, ${this.city}, ${this.state} ${this.zip}, ${this.country}`;
   },
@@ -29,7 +36,14 @@ export const poconosLocation = {
 
 export type LatLng = { lat: number; lng: number };
 
+/** Pin on the property — shown while the map frames the lake */
 export const propertyCoordinates: LatLng = {
-  lat: poconosLocation.lat,
-  lng: poconosLocation.lng,
+  lat: poconosLocation.propertyLat,
+  lng: poconosLocation.propertyLng,
+};
+
+/** Camera center — Lake Harmony water body */
+export const mapViewCenter: LatLng = {
+  lat: poconosLocation.lakeLat,
+  lng: poconosLocation.lakeLng,
 };

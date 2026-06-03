@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import { Compass, ExternalLink, Mountain, Navigation, Satellite } from "lucide-react";
-import { poconosLocation, propertyCoordinates } from "../lib/location";
+import { poconosLocation, mapViewCenter, propertyCoordinates } from "../lib/location";
 import "leaflet/dist/leaflet.css";
 
 const ESRI_SATELLITE =
@@ -10,7 +10,9 @@ const ESRI_SATELLITE =
 const ESRI_LABELS =
   "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}";
 
-const center: [number, number] = [
+const mapCenter: [number, number] = [mapViewCenter.lat, mapViewCenter.lng];
+
+const propertyPin: [number, number] = [
   propertyCoordinates.lat,
   propertyCoordinates.lng,
 ];
@@ -27,9 +29,9 @@ function MapFlyIn({ enabled }: { enabled: boolean }) {
 
   useEffect(() => {
     if (!enabled) return;
-    map.setView(center, 14, { animate: false });
+    map.setView(mapCenter, poconosLocation.mapFlyStartZoom, { animate: false });
     const timeout = window.setTimeout(() => {
-      map.flyTo(center, poconosLocation.mapZoom, {
+      map.flyTo(mapCenter, poconosLocation.mapZoom, {
         duration: 2.4,
         easeLinearity: 0.25,
       });
@@ -74,11 +76,11 @@ export function PropertyMapShowcase() {
     <section
       ref={sectionRef}
       className="property-map-showcase relative left-1/2 w-screen -translate-x-1/2"
-      aria-label="Property location satellite map"
+      aria-label="Lake Harmony satellite map"
     >
       <div className="relative h-[72vh] w-full md:h-[80vh] lg:h-[85vh]">
         <MapContainer
-          center={center}
+          center={mapCenter}
           zoom={poconosLocation.mapFlyZoom}
           className="property-map-canvas absolute inset-0 z-0 h-full w-full"
           scrollWheelZoom={false}
@@ -87,7 +89,7 @@ export function PropertyMapShowcase() {
         >
           <TileLayer url={ESRI_SATELLITE} maxZoom={19} />
           <TileLayer url={ESRI_LABELS} maxZoom={19} opacity={0.72} />
-          <Marker position={center} icon={pulseMarker} />
+          <Marker position={propertyPin} icon={pulseMarker} />
           {mapActive && <MapFlyIn enabled={mapActive} />}
         </MapContainer>
 
@@ -151,8 +153,8 @@ export function PropertyMapShowcase() {
               {poconosLocation.zip}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-white/60">
-              Nestled in Lake Harmony Estates — lakes, slopes, and cabin country
-              at your doorstep.
+              On the shores of Lake Harmony — your cabin is minutes from the
+              water, slopes, and Pocono trail country.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
