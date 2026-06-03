@@ -3,7 +3,7 @@ import { lodgingImages } from "./lodging-images";
 
 export const images = {
   logo: "/images/GprGteIPH00Jsm7vk0gDIa0mg.svg",
-  hero: lodgingImages.poolRetreat,
+  hero: lodgingImages.poolRetreat /* first hero slide; see heroSlides */,
   introWide: lodgingImages.deck,
   categoryRemote: lodgingImages.poolRetreat,
   categoryFamily: lodgingImages.kitchen,

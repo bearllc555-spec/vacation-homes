@@ -20,6 +20,8 @@
 
     .reveal,
     .hero-badge,
+    .hero-slide,
+    .hero-slide-img,
     .contact-success,
     .magic-word,
     .text-magic-shimmer,
@@ -50,6 +52,20 @@
 
   .hero-badge {
     animation: hero-badge-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+  }
+
+  .hero-slide {
+    opacity: 0;
+    transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-slide-active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .hero-slide-active .hero-slide-img {
+    animation: hero-ken-burns 6s ease-out forwards;
   }
 
   .contact-success {
@@ -189,6 +205,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes hero-ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
   }
 }
 

@@ -10,3 +10,11 @@ export const lodgingImages = {
   suiteInterior: "/images/lodging/bstatic-662807216.jpg",
   lakesideRoom: "/images/lodging/bstatic-597839264.jpg",
 } as const;
+
+/** Hero background rotation — large home exteriors */
+export const heroSlides = [
+  lodgingImages.poolRetreat,
+  lodgingImages.lodgeExterior,
+  lodgingImages.mountainView,
+  lodgingImages.deck,
+] as const;
