@@ -2,23 +2,29 @@ import { testimonials } from "../content/site";
 
 export function TestimonialsSection() {
   return (
-    <section id="reviews" className="bg-[#FAF8F5] py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <h2 className="text-3xl font-semibold tracking-tight text-[#1A2B32] md:text-4xl">
-          What guests are saying
-        </h2>
-        <ul className="mt-12 grid gap-6 md:grid-cols-3">
+    <section id="reviews" className="bg-[#fcfcfc] py-20 md:py-28">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-10 lg:px-16">
+        <ul className="grid gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
             <li
               key={t.name}
-              className="flex flex-col rounded-2xl border border-[#E8E2DA] bg-white p-8"
+              className="flex flex-col rounded-2xl border border-black/8 bg-white p-8"
             >
-              <blockquote className="flex-1 text-[#1A2B32] leading-relaxed">
+              <blockquote className="flex-1 text-base leading-relaxed text-neutral-700">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
-              <footer className="mt-6 border-t border-[#E8E2DA] pt-6">
-                <p className="font-semibold text-[#1A2B32]">{t.name}</p>
-                <p className="text-sm text-[#5C6B73]">{t.role}</p>
+              <footer className="mt-8 flex items-center gap-3 border-t border-black/8 pt-6">
+                <img
+                  src={t.avatar}
+                  alt=""
+                  className="h-12 w-12 rounded-full object-cover"
+                  width={48}
+                  height={48}
+                />
+                <div>
+                  <p className="font-medium text-black">{t.name}</p>
+                  <p className="text-sm text-neutral-500">{t.role}</p>
+                </div>
               </footer>
             </li>
           ))}

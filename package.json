@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/process-stayli.mjs && vite build",
+    "build": "tsc -b && vite build",
+    "build:framer-static": "node scripts/process-stayli.mjs && vite build",
     "preview": "wrangler pages dev dist --port 8788",
     "lint": "eslint .",
     "deploy": "npm run build && wrangler pages deploy dist --project-name=vacation-homes"

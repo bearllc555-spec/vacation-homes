@@ -3,53 +3,68 @@ import { Menu, X } from "lucide-react";
 import { business } from "../lib/business";
 import { goHome } from "../lib/navigation";
 import { SITE_VERSION } from "../lib/version";
+import { images } from "../lib/assets";
 import { navLinks } from "../content/site";
+import { Button } from "./ui/Button";
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  variant?: "hero" | "default";
+};
+
+export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const onHero = variant === "hero";
+
+  const linkClass = onHero
+    ? "text-sm text-white/90 transition-colors hover:text-white"
+    : "text-sm text-black/80 transition-colors hover:text-black";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#E8E2DA] bg-[#FAF8F5]/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:px-10">
+    <header
+      className={
+        onHero
+          ? "absolute inset-x-0 top-0 z-50"
+          : "sticky top-0 z-50 border-b border-black/5 bg-[#fcfcfc]/90 backdrop-blur-md"
+      }
+    >
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-6 py-6 md:px-10 lg:px-16">
         <a
           href="/"
           onClick={(e) => {
             goHome(e);
             setMenuOpen(false);
           }}
-          className="group flex flex-col"
+          className="inline-flex items-center gap-2"
           aria-label={`${business.brandName} home`}
         >
-          <span className="text-xl font-semibold tracking-tight text-[#1A2B32] transition-colors group-hover:text-[#C47B5A] md:text-2xl">
-            {business.brandName}
-          </span>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#5C6B73]">
+          <img src={images.logo} alt="" className="h-5 w-auto" width={59} height={20} />
+          <span
+            className={`text-[10px] font-semibold uppercase tracking-[0.14em] ${
+              onHero ? "text-white/70" : "text-neutral-500"
+            }`}
+          >
             {SITE_VERSION}
           </span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
           {navLinks.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm text-[#1A2B32] transition-colors hover:text-[#C47B5A]"
-            >
+            <a key={item.href} href={item.href} className={linkClass}>
               {item.label}
             </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href="#contact"
-            className="hidden rounded-full bg-[#1A2B32] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2A3F4A] sm:inline-flex"
+          <Button
+            href="#listings"
+            className={`hidden sm:inline-flex ${onHero ? "" : ""}`}
           >
-            Book today
-          </a>
+            Get Started
+          </Button>
           <button
             type="button"
-            className="inline-flex rounded-lg p-2 text-[#1A2B32] md:hidden"
+            className={`inline-flex rounded-lg p-2 md:hidden ${onHero ? "text-white" : "text-black"}`}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((o) => !o)}
@@ -61,15 +76,15 @@ export function SiteHeader() {
 
       {menuOpen && (
         <nav
-          className="border-t border-[#E8E2DA] px-6 py-4 md:hidden"
+          className={`px-6 pb-6 md:hidden ${onHero ? "text-white" : "text-black"}`}
           aria-label="Mobile"
         >
-          <ul className="space-y-1">
+          <ul className="space-y-2 rounded-2xl bg-black/40 p-4 backdrop-blur-md">
             {navLinks.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="block rounded-lg px-3 py-2.5 text-sm text-[#1A2B32] hover:bg-white"
+                  className="block py-2 text-sm"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
@@ -77,13 +92,7 @@ export function SiteHeader() {
               </li>
             ))}
             <li className="pt-2">
-              <a
-                href="#contact"
-                className="block rounded-full bg-[#1A2B32] px-5 py-2.5 text-center text-sm font-medium text-white"
-                onClick={() => setMenuOpen(false)}
-              >
-                Book today
-              </a>
+              <Button href="#listings">Get Started</Button>
             </li>
           </ul>
         </nav>

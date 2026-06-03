@@ -2,7 +2,7 @@
 
 **GitHub:** https://github.com/bearllc555-spec/vacation-homes
 
-**Design source:** Pixel clone of https://stayli.framer.website/ (`v1.02`); see README.
+**Design source:** React clone of https://stayli.framer.website/ (`v1.03`); see README.
 
 ## Cloudflare Pages
 

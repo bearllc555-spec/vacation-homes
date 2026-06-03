@@ -1,7 +1,9 @@
 export const business = {
-  brandName: "Shoreline Stays",
+  brandName: "Stayli",
   tagline: "Discover your ideal vacation home today",
-  email: "hello@shorelinestays.example",
+  heroSubtext:
+    "Uncover a world of unique homes and unforgettable experiences. Your perfect getaway awaits just a search away!",
+  email: "hello@stayli.example",
   phone: "(555) 214-8800",
   founded: "2021",
 } as const;

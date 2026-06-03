@@ -124,7 +124,7 @@ const headInject = `
 const bodyInject = `
 <script id="stayli-custom-js">
 (function () {
-  var VERSION = "v1.02";
+  var VERSION = "v1.03";
   document.addEventListener("click", function (e) {
     var a = e.target.closest('a[href="./"], a[href="/"]');
     if (!a) return;

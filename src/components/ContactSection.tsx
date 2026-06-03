@@ -1,33 +1,34 @@
-import { business } from "../lib/business";
+import { images } from "../lib/assets";
+import { SectionEyebrow } from "./ui/SectionEyebrow";
+import { Button } from "./ui/Button";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="bg-[#FAF8F5] py-20 md:py-28">
-      <div className="mx-auto max-w-3xl px-6 text-center md:px-10">
-        <h2 className="text-3xl font-semibold tracking-tight text-[#1A2B32] md:text-4xl">
-          Find a home away from home
-        </h2>
-        <p className="mt-4 text-lg text-[#5C6B73]">
-          Questions about a listing or hosting with us? We would love to hear
-          from you.
-        </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href={`mailto:${business.email}`}
-            className="rounded-full bg-[#1A2B32] px-8 py-3 font-semibold text-white transition-colors hover:bg-[#2A3F4A]"
-          >
-            Contact us
-          </a>
-          <a
-            href="#stays"
-            className="rounded-full border border-[#1A2B32] px-8 py-3 font-semibold text-[#1A2B32] transition-colors hover:bg-white"
-          >
-            List your property
-          </a>
+    <section id="contact" className="bg-[#fcfcfc] py-20 md:py-28">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-10 lg:px-16">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <SectionEyebrow>Connect</SectionEyebrow>
+            <h2 className="mt-3 text-[clamp(1.75rem,4vw,2.5rem)] font-normal leading-tight tracking-[-0.03em]">
+              Get In touch
+            </h2>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-neutral-600">
+              We&apos;d love to hear from you. Reach out with any questions or
+              feedback.
+            </p>
+            <div className="mt-8">
+              <Button href="mailto:hello@stayli.example">Contact</Button>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-2xl">
+            <img
+              src={images.contactWide}
+              alt=""
+              className="aspect-[1171/272] w-full object-cover md:aspect-auto md:min-h-[280px]"
+              loading="lazy"
+            />
+          </div>
         </div>
-        <p className="mt-8 text-sm text-[#5C6B73]">
-          {business.phone} · {business.email}
-        </p>
       </div>
     </section>
   );
