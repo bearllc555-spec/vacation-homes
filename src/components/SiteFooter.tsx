@@ -1,4 +1,4 @@
-import { images } from "../lib/assets";
+import { business } from "../lib/business";
 import { goHome } from "../lib/navigation";
 
 const footerLinks = [
@@ -16,14 +16,12 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1280px] px-6 md:px-10 lg:px-16">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-sm">
-            <a href="/" onClick={goHome} className="inline-block">
-              <img
-                src={images.footerWordmark}
-                alt="Stayli"
-                className="h-10 w-auto max-w-[280px] object-contain object-left md:h-12"
-                width={280}
-                height={48}
-              />
+            <a
+              href="/"
+              onClick={goHome}
+              className="inline-block text-lg font-semibold tracking-tight text-white md:text-xl"
+            >
+              {business.brandName}
             </a>
             <p className="mt-8 text-sm font-medium text-white">Subscribe to Updates</p>
             <form
@@ -60,7 +58,7 @@ export function SiteFooter() {
           </nav>
         </div>
         <p className="mt-14 text-xs text-white/50">
-          © {year} Stayli. Vacation homes design concept.
+          © {year} {business.brandName}. Vacation homes design concept.
         </p>
       </div>
     </footer>

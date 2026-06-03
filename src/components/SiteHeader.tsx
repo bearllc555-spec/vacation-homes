@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 import { business } from "../lib/business";
 import { goHome } from "../lib/navigation";
 import { SITE_VERSION } from "../lib/version";
-import { images } from "../lib/assets";
 import { navLinks } from "../content/site";
 import { Button } from "./ui/Button";
 
@@ -34,10 +33,16 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
             goHome(e);
             setMenuOpen(false);
           }}
-          className="inline-flex items-center gap-2"
+          className="inline-flex min-w-0 flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-2"
           aria-label={`${business.brandName} home`}
         >
-          <img src={images.logo} alt="" className="h-5 w-auto" width={59} height={20} />
+          <span
+            className={`text-sm font-semibold leading-tight tracking-tight md:text-base ${
+              onHero ? "text-white" : "text-black"
+            }`}
+          >
+            {business.brandName}
+          </span>
           <span
             className={`text-[10px] font-semibold uppercase tracking-[0.14em] ${
               onHero ? "text-white/70" : "text-neutral-500"
