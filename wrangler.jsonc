@@ -1,0 +1,6 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "vacation-homes",
+  "compatibility_date": "2026-06-03",
+  "pages_build_output_dir": "./dist"
+}

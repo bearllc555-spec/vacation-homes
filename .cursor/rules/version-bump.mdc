@@ -1,0 +1,7 @@
+---
+description: Bump SITE_VERSION on every site change
+globs: src/**/*
+alwaysApply: false
+---
+
+When you change copy, layout, styles, or assets in this project, increment `SITE_VERSION` in `src/lib/version.ts` (e.g. `v1.01` → `v1.02`).
