@@ -10,11 +10,7 @@ export function TestimonialsSection() {
           User feedback
         </SectionEyebrow>
 
-        <Carousel
-          variant="slides"
-          showDots
-          ariaLabel="Guest testimonials"
-        >
+        <Carousel variant="slides" ariaLabel="Guest testimonials">
           {testimonials.map((t) => (
             <figure
               key={t.name}

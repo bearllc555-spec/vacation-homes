@@ -18,7 +18,6 @@ type CarouselProps = {
   slideWidth?: number;
   gap?: number;
   showArrows?: boolean;
-  showDots?: boolean;
   className?: string;
   trackClassName?: string;
   ariaLabel?: string;
@@ -30,7 +29,6 @@ export function Carousel({
   slideWidth = 376,
   gap = 24,
   showArrows = true,
-  showDots = false,
   className = "",
   trackClassName = "",
   ariaLabel = "Carousel",
@@ -99,8 +97,31 @@ export function Carousel({
 
   return (
     <div className={className}>
+      <div
+        id={`${id}-track`}
+        ref={trackRef}
+        role="region"
+        aria-label={ariaLabel}
+        aria-live={variant === "slides" ? "polite" : undefined}
+        className={`scrollbar-none flex overflow-x-auto scroll-smooth snap-x snap-mandatory ${trackClassName}`}
+        style={{ gap: variant === "strip" ? gap : 0 }}
+      >
+        {slides.map((slide, i) =>
+          variant === "slides" ? (
+            <div
+              key={i}
+              className="w-full shrink-0 snap-center snap-always"
+            >
+              {slide}
+            </div>
+          ) : (
+            <Fragment key={i}>{slide}</Fragment>
+          ),
+        )}
+      </div>
+
       {showArrows && (
-        <div className="mb-6 flex justify-end gap-2">
+        <div className="mt-8 flex justify-center gap-2">
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-black transition hover:bg-neutral-50 disabled:opacity-40"
@@ -121,53 +142,6 @@ export function Carousel({
           >
             <ChevronRight className="h-5 w-5" />
           </button>
-        </div>
-      )}
-
-      <div
-        id={`${id}-track`}
-        ref={trackRef}
-        role="region"
-        aria-label={ariaLabel}
-        aria-live={variant === "slides" ? "polite" : undefined}
-        className={`flex overflow-x-auto scroll-smooth pb-2 scrollbar-thin snap-x snap-mandatory ${trackClassName}`}
-        style={{ gap: variant === "strip" ? gap : 0 }}
-      >
-        {slides.map((slide, i) =>
-          variant === "slides" ? (
-            <div
-              key={i}
-              className="w-full shrink-0 snap-center snap-always"
-            >
-              {slide}
-            </div>
-          ) : (
-            <Fragment key={i}>{slide}</Fragment>
-          ),
-        )}
-      </div>
-
-      {showDots && slideCount > 1 && (
-        <div
-          className="mt-8 flex justify-center gap-2"
-          role="tablist"
-          aria-label="Slides"
-        >
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              role="tab"
-              aria-selected={i === activeIndex}
-              aria-label={`Slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${
-                i === activeIndex
-                  ? "w-8 bg-black"
-                  : "w-2 bg-black/20 hover:bg-black/35"
-              }`}
-              onClick={() => scrollToSlide(i)}
-            />
-          ))}
         </div>
       )}
     </div>
