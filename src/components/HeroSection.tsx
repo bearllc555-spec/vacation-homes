@@ -3,9 +3,10 @@ import { images } from "../lib/assets";
 import { SiteHeader } from "./SiteHeader";
 import { Button } from "./ui/Button";
 
-/** Measured from stayli.framer.website @ 1440×900 (hero 1136px tall) */
+/** Framer "Variant 1" CSS + matrix(-1,0,0,-1) flip so deep blue reads at the top */
 const HERO_BLUE_GRADIENT =
   "linear-gradient(180deg, rgba(252, 252, 252, 0) 10.5857%, rgb(6, 80, 135) 100%)";
+const HERO_BLUE_FLIP = "matrix(-1, 0, 0, -1, 0, 0)";
 const HERO_BOTTOM_FADE =
   "linear-gradient(rgba(252, 252, 252, 0) 10.5857%, rgb(252, 252, 252) 85.2795%)";
 
@@ -26,7 +27,7 @@ export function HeroSection() {
       {/* Framer "Variant 1": inset top/left/right 0, bottom 492px on 1136px hero */}
       <div
         className="pointer-events-none absolute inset-x-0 top-0 z-[1] bottom-[43.31%]"
-        style={{ background: HERO_BLUE_GRADIENT }}
+        style={{ background: HERO_BLUE_GRADIENT, transform: HERO_BLUE_FLIP }}
         aria-hidden
       />
       {/* Framer "gradient bottom": 284px band at base */}
