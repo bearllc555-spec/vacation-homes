@@ -4,6 +4,6 @@ export const business = {
   heroSubtext:
     "Uncover a world of unique homes and unforgettable experiences. Your perfect getaway awaits just a search away!",
   email: "hello@stayli.example",
-  phone: "(555) 214-8800",
+  phone: "(570) 555-0142",
   founded: "2021",
 } as const;

@@ -1,4 +1,5 @@
 import { business } from "../lib/business";
+import { poconosLocation } from "../lib/location";
 import { images } from "../lib/assets";
 import { SiteHeader } from "./SiteHeader";
 import { Button } from "./ui/Button";
@@ -38,6 +39,13 @@ export function HeroSection() {
       />
       <SiteHeader variant="hero" />
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1280px] flex-col items-center justify-start px-6 pb-32 pt-28 text-center lg:min-h-[1136px] lg:pt-[160px] md:px-10 lg:px-16">
+        <p className="hero-badge mb-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-medium tracking-wide text-white/90 backdrop-blur-md">
+          <span className="relative flex h-2 w-2" aria-hidden>
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#EBF213] opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#EBF213]" />
+          </span>
+          Flagship escapes · {poconosLocation.region}
+        </p>
         <h1
           className="max-w-4xl text-[clamp(2.25rem,6vw,3.75rem)] font-normal leading-[1.1] tracking-[-0.04em]"
           style={{ letterSpacing: "-0.04em" }}

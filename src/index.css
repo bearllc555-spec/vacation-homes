@@ -17,6 +17,59 @@
     html {
       scroll-behavior: auto;
     }
+
+    .reveal,
+    .hero-badge,
+    .contact-success {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+  }
+}
+
+@layer components {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero-badge {
+    animation: hero-badge-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+  }
+
+  .contact-success {
+    animation: success-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@keyframes hero-badge-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes success-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
