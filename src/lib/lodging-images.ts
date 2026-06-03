@@ -6,4 +6,7 @@ export const lodgingImages = {
   kitchen: "/images/lodging/da7006c4.jpg",
   deck: "/images/lodging/475af5a0.jpg",
   mountainView: "/images/lodging/e9598298.jpg",
+  poolRetreat: "/images/lodging/9368cc3e.jpg",
+  suiteInterior: "/images/lodging/bstatic-662807216.jpg",
+  lakesideRoom: "/images/lodging/bstatic-597839264.jpg",
 } as const;

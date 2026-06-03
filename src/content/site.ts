@@ -49,7 +49,7 @@ export const listings: Listing[] = [
     beds: 2,
     guests: 4,
     priceUsd: 120,
-    image: lodgingImages.livingRoom,
+    image: lodgingImages.suiteInterior,
   },
   {
     id: "sunset-horizon",
@@ -58,7 +58,7 @@ export const listings: Listing[] = [
     beds: 2,
     guests: 4,
     priceUsd: 150,
-    image: lodgingImages.bedroom,
+    image: lodgingImages.poolRetreat,
   },
   {
     id: "mountainview",
@@ -67,7 +67,7 @@ export const listings: Listing[] = [
     beds: 1,
     guests: 2,
     priceUsd: 95,
-    image: lodgingImages.kitchen,
+    image: lodgingImages.lakesideRoom,
   },
   {
     id: "ocean-breeze",
@@ -76,7 +76,7 @@ export const listings: Listing[] = [
     beds: 3,
     guests: 6,
     priceUsd: 210,
-    image: lodgingImages.deck,
+    image: lodgingImages.suiteInterior,
   },
   {
     id: "horizon-view",
@@ -111,7 +111,7 @@ export const testimonials = [
     name: "Emily Johnson",
     role: "Travel Blogger",
     avatar: "/images/tn6LfEaX4TJCPCvr2BbqzEaNeQ.jpg",
-    photo: lodgingImages.kitchen,
+    photo: lodgingImages.poolRetreat,
   },
   {
     quote:
@@ -119,7 +119,7 @@ export const testimonials = [
     name: "Michael Johnson",
     role: "Adventure Traveler",
     avatar: "/images/y7nwj8MxN3cyIppSiglOfC810X0.webp",
-    photo: lodgingImages.deck,
+    photo: lodgingImages.suiteInterior,
   },
   {
     quote:
@@ -127,7 +127,7 @@ export const testimonials = [
     name: "Sarah Wilson",
     role: "Travel Enthusiast",
     avatar: "/images/6kz6Y5bDiG9Gy15iZZEGZEfJuI.webp",
-    photo: lodgingImages.mountainView,
+    photo: lodgingImages.lakesideRoom,
   },
 ] as const;
 
@@ -138,7 +138,7 @@ export const journalPosts = [
     author: "Sarah Wilson",
     date: "Jun 2, 2025",
     readMins: 4,
-    image: lodgingImages.lodgeExterior,
+    image: lodgingImages.poolRetreat,
   },
   {
     title: "Japan: Essential Travel Tips",
@@ -146,7 +146,7 @@ export const journalPosts = [
     author: "Emily Davis",
     date: "Jun 4, 2025",
     readMins: 5,
-    image: lodgingImages.livingRoom,
+    image: lodgingImages.suiteInterior,
   },
   {
     title: "Adventure in Greece: Travel Insights",
@@ -154,6 +154,6 @@ export const journalPosts = [
     author: "Michael Johnson",
     date: "Jun 20, 2025",
     readMins: 4,
-    image: lodgingImages.bedroom,
+    image: lodgingImages.lakesideRoom,
   },
 ] as const;
