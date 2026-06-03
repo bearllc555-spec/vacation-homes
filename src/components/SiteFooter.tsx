@@ -1,12 +1,15 @@
-import { business } from "../lib/business";
+import { Facebook, Instagram, Twitter } from "lucide-react";
+import { business, socialLinks } from "../lib/business";
 import { goHome } from "../lib/navigation";
+import { navLinks } from "../content/site";
 
-const footerLinks = [
-  { label: "Home", href: "#start" },
-  { label: "About Us", href: "#about" },
-  { label: "Contact", href: "#contact" },
-  { label: "Blog", href: "#journal" },
-] as const;
+const SOCIAL_ICONS = {
+  Facebook,
+  Instagram,
+  Twitter,
+} as const;
+
+const BUILT_BY_URL = "https://998webdesigns.com";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -44,7 +47,7 @@ export function SiteFooter() {
 
           <nav aria-label="Footer" className="lg:pt-2">
             <ul className="flex flex-col gap-3 sm:flex-row sm:gap-10">
-              {footerLinks.map((item) => (
+              {navLinks.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
@@ -57,9 +60,42 @@ export function SiteFooter() {
             </ul>
           </nav>
         </div>
-        <p className="mt-14 text-xs text-white/50">
-          © {year} {business.brandName}. Vacation homes design concept.
-        </p>
+
+        <div className="mt-14 flex flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
+          <p className="text-xs text-white/50">
+            Copyrighted by {business.brandName} &copy; {year}
+          </p>
+
+          <div className="flex items-center gap-4">
+            {socialLinks.map((link) => {
+              const Icon = SOCIAL_ICONS[link.icon];
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="text-white/70 transition hover:text-white"
+                >
+                  <Icon className="h-5 w-5" aria-hidden />
+                </a>
+              );
+            })}
+          </div>
+
+          <p className="text-xs text-white/50 md:text-right">
+            Built by{" "}
+            <a
+              href={BUILT_BY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/85 transition hover:text-white"
+            >
+              998 web designs
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

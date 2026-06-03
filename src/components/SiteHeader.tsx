@@ -33,11 +33,11 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
             goHome(e);
             setMenuOpen(false);
           }}
-          className="inline-flex min-w-0 flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-2"
+          className="inline-flex min-w-0 flex-col gap-0.5"
           aria-label={`${business.brandName} home`}
         >
           <span
-            className={`text-sm font-semibold leading-tight tracking-tight md:text-base ${
+            className={`text-base font-semibold leading-tight tracking-tight md:text-lg ${
               onHero ? "text-white" : "text-black"
             }`}
           >
