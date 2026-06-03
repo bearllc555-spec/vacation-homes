@@ -108,21 +108,24 @@ export const testimonials = [
       "Absolutely loved our stay! The place was perfect, even better than expected. Great location, and the host was fantastic. Highly recommend!",
     name: "Emily Johnson",
     role: "Travel Blogger",
-    avatar: "/images/L8ecKv1khqtkKXzCYnf1dx5L7i0.webp",
+    avatar: "/images/tn6LfEaX4TJCPCvr2BbqzEaNeQ.jpg",
+    photo: "/images/DkyT1E55ffCHP2fDKQiz2vpRY0I.webp",
   },
   {
     quote:
       "Such a cozy space! Everything was clean and just as described. We especially loved the little touches that made it feel like home. Would totally stay again!",
     name: "Michael Johnson",
     role: "Adventure Traveler",
-    avatar: "/images/uptRtksXtXSfAlSqF1tiHpzvr7g.webp",
+    avatar: "/images/y7nwj8MxN3cyIppSiglOfC810X0.webp",
+    photo: "/images/Nl9GueRMStnVRHUryn0I8CYSQ.webp",
   },
   {
     quote:
       "Our experience was amazing from start to finish. The property was beautifully designed, and close to everything we needed. We'd definitely book again!",
     name: "Sarah Wilson",
     role: "Travel Enthusiast",
-    avatar: "/images/tn6LfEaX4TJCPCvr2BbqzEaNeQ.jpg",
+    avatar: "/images/6kz6Y5bDiG9Gy15iZZEGZEfJuI.webp",
+    photo: "/images/bAERuZtMzoWKSe9KjtsaFyXeiA.webp",
   },
 ] as const;
 

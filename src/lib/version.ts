@@ -1,2 +1,2 @@
 /** Increment on every change — shown in the site header */
-export const SITE_VERSION = "v1.09";
+export const SITE_VERSION = "v1.10";
