@@ -1,3 +1,5 @@
+import { lodgingImages } from "../lib/lodging-images";
+
 export type Listing = {
   id: string;
   name: string;
@@ -19,13 +21,13 @@ export const categories = [
   {
     title: "Remote Work Destinations",
     body: "Quiet spots with fast Wi-Fi, ideal for working in a new setting.",
-    image: "/images/7gsrHHR9sbH3PQgRawuxGJL9GbM.webp",
+    image: lodgingImages.bedroom,
     cta: "Explore",
   },
   {
     title: "Family getaways",
     body: "Comfortable spaces perfect for family memories.",
-    image: "/images/Z8XEWnU25PNS3p62mlvKKkzQCWg.webp",
+    image: lodgingImages.kitchen,
     cta: "Discover",
   },
 ] as const;
@@ -38,7 +40,7 @@ export const listings: Listing[] = [
     beds: 1,
     guests: 2,
     priceUsd: 180,
-    image: "/images/cQhxKTEX8Bvbszzx54YCEqNsuc.webp",
+    image: lodgingImages.lodgeExterior,
   },
   {
     id: "zen-villas",
@@ -47,7 +49,7 @@ export const listings: Listing[] = [
     beds: 2,
     guests: 4,
     priceUsd: 120,
-    image: "/images/tZBeQTrsw7HQUjx7GASloqaxRo.webp",
+    image: lodgingImages.livingRoom,
   },
   {
     id: "sunset-horizon",
@@ -56,7 +58,7 @@ export const listings: Listing[] = [
     beds: 2,
     guests: 4,
     priceUsd: 150,
-    image: "/images/hLClyZf4xqI41LuCI2UecjIdg.webp",
+    image: lodgingImages.bedroom,
   },
   {
     id: "mountainview",
@@ -65,7 +67,7 @@ export const listings: Listing[] = [
     beds: 1,
     guests: 2,
     priceUsd: 95,
-    image: "/images/5BaieWphM9EHM7cUW9g8MBuAGA.webp",
+    image: lodgingImages.kitchen,
   },
   {
     id: "ocean-breeze",
@@ -74,7 +76,7 @@ export const listings: Listing[] = [
     beds: 3,
     guests: 6,
     priceUsd: 210,
-    image: "/images/UsJPsnSzyP2kM0CHU24H1HdwwU.webp",
+    image: lodgingImages.deck,
   },
   {
     id: "horizon-view",
@@ -83,7 +85,7 @@ export const listings: Listing[] = [
     beds: 1,
     guests: 2,
     priceUsd: 55,
-    image: "/images/qgDDbHuQhwZvGmgVo8Be1t2uezQ.webp",
+    image: lodgingImages.mountainView,
   },
 ];
 
@@ -109,7 +111,7 @@ export const testimonials = [
     name: "Emily Johnson",
     role: "Travel Blogger",
     avatar: "/images/tn6LfEaX4TJCPCvr2BbqzEaNeQ.jpg",
-    photo: "/images/DkyT1E55ffCHP2fDKQiz2vpRY0I.webp",
+    photo: lodgingImages.kitchen,
   },
   {
     quote:
@@ -117,7 +119,7 @@ export const testimonials = [
     name: "Michael Johnson",
     role: "Adventure Traveler",
     avatar: "/images/y7nwj8MxN3cyIppSiglOfC810X0.webp",
-    photo: "/images/Nl9GueRMStnVRHUryn0I8CYSQ.webp",
+    photo: lodgingImages.deck,
   },
   {
     quote:
@@ -125,7 +127,7 @@ export const testimonials = [
     name: "Sarah Wilson",
     role: "Travel Enthusiast",
     avatar: "/images/6kz6Y5bDiG9Gy15iZZEGZEfJuI.webp",
-    photo: "/images/bAERuZtMzoWKSe9KjtsaFyXeiA.webp",
+    photo: lodgingImages.mountainView,
   },
 ] as const;
 
@@ -136,7 +138,7 @@ export const journalPosts = [
     author: "Sarah Wilson",
     date: "Jun 2, 2025",
     readMins: 4,
-    image: "/images/00vZVvP93tE4EEBUGDimbKtELI.webp",
+    image: lodgingImages.lodgeExterior,
   },
   {
     title: "Japan: Essential Travel Tips",
@@ -144,7 +146,7 @@ export const journalPosts = [
     author: "Emily Davis",
     date: "Jun 4, 2025",
     readMins: 5,
-    image: "/images/DkyT1E55ffCHP2fDKQiz2vpRY0I.webp",
+    image: lodgingImages.livingRoom,
   },
   {
     title: "Adventure in Greece: Travel Insights",
@@ -152,6 +154,6 @@ export const journalPosts = [
     author: "Michael Johnson",
     date: "Jun 20, 2025",
     readMins: 4,
-    image: "/images/y7nwj8MxN3cyIppSiglOfC810X0.webp",
+    image: lodgingImages.bedroom,
   },
 ] as const;

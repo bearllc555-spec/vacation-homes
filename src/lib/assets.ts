@@ -1,16 +1,19 @@
-/** Local copies of Stayli Framer assets (public/images) */
+/** Local site assets */
+import { lodgingImages } from "./lodging-images";
+
 export const images = {
   logo: "/images/GprGteIPH00Jsm7vk0gDIa0mg.svg",
-  hero: "/images/oCFHERFQM6FowGj8dkYJk0Kse9Q.png",
-  introWide: "/images/XnELtkjlSXpBpKTTTW49bBgxpY.webp",
-  categoryRemote: "/images/7gsrHHR9sbH3PQgRawuxGJL9GbM.webp",
-  categoryFamily: "/images/Z8XEWnU25PNS3p62mlvKKkzQCWg.webp",
-  aboutPortrait: "/images/bAERuZtMzoWKSe9KjtsaFyXeiA.webp",
-  aboutWide: "/images/Nl9GueRMStnVRHUryn0I8CYSQ.webp",
-  videoThumb: "/images/6kz6Y5bDiG9Gy15iZZEGZEfJuI.webp",
+  hero: lodgingImages.lodgeExterior,
+  introWide: lodgingImages.livingRoom,
+  categoryRemote: lodgingImages.bedroom,
+  categoryFamily: lodgingImages.kitchen,
+  aboutPortrait: lodgingImages.deck,
+  aboutWide: lodgingImages.mountainView,
+  videoThumb: lodgingImages.bedroom,
   aboutVideo: "/video/stayli-about.mp4",
-  ctaBanner: "/images/Md8vAuIbsag5dN3qkyNo9wygU.webp",
+  ctaBanner: lodgingImages.deck,
   contactWide: "/images/HgPboyydOC5EspjxZyAvkV5b8w.webp",
-  /** White wordmark used in Stayli footer */
   footerWordmark: "/images/HgPboyydOC5EspjxZyAvkV5b8w.webp",
 } as const;
+
+export { lodgingImages };
