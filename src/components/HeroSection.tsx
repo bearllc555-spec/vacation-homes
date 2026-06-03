@@ -13,10 +13,15 @@ export function HeroSection() {
       <img
         src={images.hero}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
       />
+      {/* Stayli uses the same asset with no top dimming — only a short bottom fade into #fcfcfc */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-[#fcfcfc]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[28%] min-h-[200px] max-h-[320px]"
+        style={{
+          background:
+            "linear-gradient(rgba(252, 252, 252, 0) 10.5857%, rgb(252, 252, 252) 85.2795%)",
+        }}
         aria-hidden
       />
       <SiteHeader variant="hero" />
