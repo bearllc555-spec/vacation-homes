@@ -11,4 +11,6 @@ export const images = {
   aboutVideo: "/video/stayli-about.mp4",
   ctaBanner: "/images/Md8vAuIbsag5dN3qkyNo9wygU.webp",
   contactWide: "/images/HgPboyydOC5EspjxZyAvkV5b8w.webp",
+  /** White wordmark used in Stayli footer */
+  footerWordmark: "/images/HgPboyydOC5EspjxZyAvkV5b8w.webp",
 } as const;
