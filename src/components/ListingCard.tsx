@@ -12,7 +12,8 @@ export function ListingCard({ listing }: ListingCardProps) {
           src={listing.image}
           alt={listing.name}
           className="h-full w-full object-cover"
-          loading="lazy"
+          loading="eager"
+          decoding="async"
         />
         <div className="absolute bottom-4 left-4 right-4 flex h-[88px] flex-col justify-center rounded-lg bg-[#fcfcfc] px-4">
           <p className="text-xs text-neutral-500">
