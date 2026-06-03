@@ -20,10 +20,16 @@
 
     .reveal,
     .hero-badge,
-    .contact-success {
+    .contact-success,
+    .magic-word,
+    .text-magic-shimmer,
+    .text-magic-shimmer-light,
+    .card-magic,
+    .card-magic * {
       opacity: 1 !important;
       transform: none !important;
       animation: none !important;
+      transition: none !important;
     }
   }
 }
@@ -49,6 +55,130 @@
   .contact-success {
     animation: success-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   }
+
+  /* Animated typography */
+  .text-magic-stagger .magic-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.4em);
+    animation: magic-word-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .text-magic-shimmer {
+    background-image: linear-gradient(
+      105deg,
+      #0a0a0a 0%,
+      #0a0a0a 35%,
+      #065087 48%,
+      #0a0a0a 62%,
+      #0a0a0a 100%
+    );
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: magic-shimmer 5s ease-in-out infinite;
+  }
+
+  .text-magic-shimmer-light {
+    background-image: linear-gradient(
+      105deg,
+      #ffffff 0%,
+      #ffffff 38%,
+      #ebf213 50%,
+      #ffffff 62%,
+      #ffffff 100%
+    );
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: magic-shimmer 4.5s ease-in-out infinite;
+  }
+
+  /* Card hover magic */
+  .card-magic {
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .card-magic:hover {
+    transform: translateY(-8px);
+    box-shadow:
+      0 28px 56px -20px rgba(6, 80, 135, 0.28),
+      0 12px 24px -12px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-magic-media {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-magic-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(6, 80, 135, 0.35) 0%,
+      transparent 55%
+    );
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+  }
+
+  .card-magic:hover .card-magic-media::after {
+    opacity: 1;
+  }
+
+  .card-magic-media img {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .card-magic:hover .card-magic-media img {
+    transform: scale(1.07);
+  }
+
+  .card-magic-sub {
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .card-magic:hover .card-magic-sub {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.18);
+  }
+
+  .card-magic-title {
+    transition: color 0.3s ease;
+  }
+
+  .card-magic:hover .card-magic-title {
+    color: #065087;
+  }
+
+  .card-magic-cta {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .card-magic:hover .card-magic-cta {
+    transform: translateX(4px);
+  }
+
+  .card-magic-panel {
+    transition:
+      border-color 0.4s ease,
+      background-color 0.4s ease;
+  }
+
+  .card-magic:hover.card-magic-panel {
+    border-color: rgba(6, 80, 135, 0.2);
+    background-color: #fff;
+  }
 }
 
 @keyframes hero-badge-in {
@@ -59,6 +189,23 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes magic-word-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes magic-shimmer {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
   }
 }
 

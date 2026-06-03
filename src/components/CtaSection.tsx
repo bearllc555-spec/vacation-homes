@@ -1,5 +1,6 @@
 import { images } from "../lib/assets";
 import { Button } from "./ui/Button";
+import { AnimatedHeading } from "./ui/AnimatedHeading";
 
 /** Framer CTA "Variant 1" — same gradient + flip as hero (454px band on 750px section) */
 const CTA_BLUE_GRADIENT =
@@ -22,9 +23,13 @@ export function CtaSection() {
         aria-hidden
       />
       <div className="relative z-10 mx-auto flex min-h-[420px] max-w-[1280px] flex-col items-center justify-start px-6 pt-20 text-center md:px-10 lg:min-h-[750px] lg:px-16 lg:pt-[96px]">
-        <h2 className="text-[clamp(1.75rem,4vw,2.75rem)] font-normal leading-tight tracking-[-0.03em]">
+        <AnimatedHeading
+          as="h2"
+          variant="shimmer-light"
+          className="text-[clamp(1.75rem,4vw,2.75rem)] font-normal leading-tight tracking-[-0.03em]"
+        >
           Find a home away from home!
-        </h2>
+        </AnimatedHeading>
         <div className="mt-8">
           <Button href="#contact">List Your Property</Button>
         </div>

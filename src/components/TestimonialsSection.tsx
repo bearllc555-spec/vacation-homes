@@ -37,16 +37,18 @@ export function TestimonialsSection() {
                 </figcaption>
               </div>
 
-              <div className="w-full shrink-0 md:w-[376px]">
-                <img
-                  src={t.photo}
-                  alt=""
-                  className="aspect-[376/464] w-full rounded-2xl object-cover"
-                  width={376}
-                  height={464}
-                  loading="eager"
-                  decoding="async"
-                />
+              <div className="card-magic w-full shrink-0 md:w-[376px]">
+                <div className="card-magic-media overflow-hidden rounded-2xl">
+                  <img
+                    src={t.photo}
+                    alt=""
+                    className="aspect-[376/464] w-full object-cover"
+                    width={376}
+                    height={464}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
               </div>
             </figure>
           ))}

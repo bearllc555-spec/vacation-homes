@@ -3,6 +3,7 @@ import { poconosLocation } from "../lib/location";
 import { images } from "../lib/assets";
 import { SiteHeader } from "./SiteHeader";
 import { Button } from "./ui/Button";
+import { AnimatedHeading } from "./ui/AnimatedHeading";
 
 /** Framer "Variant 1" CSS + matrix(-1,0,0,-1) flip so deep blue reads at the top */
 const HERO_BLUE_GRADIENT =
@@ -46,12 +47,13 @@ export function HeroSection() {
           </span>
           Flagship escapes · {poconosLocation.region}
         </p>
-        <h1
+        <AnimatedHeading
+          as="h1"
+          variant="stagger"
           className="max-w-4xl text-[clamp(2.25rem,6vw,3.75rem)] font-normal leading-[1.1] tracking-[-0.04em]"
-          style={{ letterSpacing: "-0.04em" }}
         >
           {business.tagline}
-        </h1>
+        </AnimatedHeading>
         <p className="mt-6 max-w-2xl text-base text-white/85 md:text-lg">
           {business.heroSubtext}
         </p>

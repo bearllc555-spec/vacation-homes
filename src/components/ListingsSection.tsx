@@ -3,6 +3,7 @@ import { ListingCard } from "./ListingCard";
 import { SectionEyebrow } from "./ui/SectionEyebrow";
 import { Button } from "./ui/Button";
 import { Carousel } from "./ui/Carousel";
+import { AnimatedHeadingLines } from "./ui/AnimatedHeading";
 
 export function ListingsSection() {
   return (
@@ -11,11 +12,11 @@ export function ListingsSection() {
         <div className="mb-2 flex flex-wrap items-end justify-between gap-6">
           <div>
             <SectionEyebrow>Discover</SectionEyebrow>
-            <h2 className="mt-3 text-[clamp(1.75rem,4vw,2.75rem)] font-normal leading-[1.08] tracking-[-0.03em]">
-              Explore your
-              <br />
-              dream destination
-            </h2>
+            <AnimatedHeadingLines
+              as="h2"
+              className="mt-3 text-[clamp(1.75rem,4vw,2.75rem)] font-normal leading-[1.08] tracking-[-0.03em]"
+              lines={["Explore your", "dream destination"]}
+            />
           </div>
           <Button href="#listings" variant="outline" className="shrink-0">
             View more
