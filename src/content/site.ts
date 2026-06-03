@@ -21,13 +21,13 @@ export const categories = [
   {
     title: "Remote Work Destinations",
     body: "Quiet spots with fast Wi-Fi, ideal for working in a new setting.",
-    image: lodgingImages.bedroom,
+    image: lodgingImages.poolRetreat,
     cta: "Explore",
   },
   {
     title: "Family getaways",
     body: "Comfortable spaces perfect for family memories.",
-    image: lodgingImages.kitchen,
+    image: lodgingImages.lakesideRoom,
     cta: "Discover",
   },
 ] as const;
