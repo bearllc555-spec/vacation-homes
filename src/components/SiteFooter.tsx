@@ -12,18 +12,16 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-black/8 bg-[#fcfcfc] py-16">
+    <footer className="border-t border-black/8 bg-[#fcfcfc] py-16 md:py-20">
       <div className="mx-auto max-w-[1280px] px-6 md:px-10 lg:px-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          <div>
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-sm">
             <a href="/" onClick={goHome} className="inline-flex items-center gap-2">
               <img src={images.logo} alt="Stayli" className="h-5 w-auto" width={59} height={20} />
             </a>
-            <p className="mt-6 max-w-xs text-sm text-neutral-600">
-              Subscribe to Updates
-            </p>
+            <p className="mt-8 text-sm font-medium text-black">Subscribe to Updates</p>
             <form
-              className="mt-4 flex max-w-sm gap-2"
+              className="mt-4 flex gap-2"
               onSubmit={(e) => e.preventDefault()}
             >
               <input
@@ -33,14 +31,15 @@ export function SiteFooter() {
               />
               <button
                 type="submit"
-                className="rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-neutral-800"
+                className="shrink-0 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-neutral-800"
               >
                 Join
               </button>
             </form>
           </div>
-          <nav aria-label="Footer">
-            <ul className="space-y-3">
+
+          <nav aria-label="Footer" className="lg:pt-2">
+            <ul className="flex flex-col gap-3 sm:flex-row sm:gap-10">
               {footerLinks.map((item) => (
                 <li key={item.href}>
                   <a
@@ -54,7 +53,7 @@ export function SiteFooter() {
             </ul>
           </nav>
         </div>
-        <p className="mt-12 text-xs text-neutral-500">
+        <p className="mt-14 text-xs text-neutral-500">
           © {year} Stayli. Vacation homes design concept.
         </p>
       </div>

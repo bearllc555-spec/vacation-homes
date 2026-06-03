@@ -8,6 +8,7 @@ export const images = {
   aboutPortrait: "/images/bAERuZtMzoWKSe9KjtsaFyXeiA.webp",
   aboutWide: "/images/Nl9GueRMStnVRHUryn0I8CYSQ.webp",
   videoThumb: "/images/6kz6Y5bDiG9Gy15iZZEGZEfJuI.webp",
+  aboutVideo: "/video/stayli-about.mp4",
   ctaBanner: "/images/Md8vAuIbsag5dN3qkyNo9wygU.webp",
   contactWide: "/images/HgPboyydOC5EspjxZyAvkV5b8w.webp",
 } as const;

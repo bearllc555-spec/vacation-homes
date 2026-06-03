@@ -5,7 +5,7 @@ export function WhySection() {
   return (
     <section id="why" className="border-y border-black/5 bg-[#fcfcfc] py-20 md:py-28">
       <div className="mx-auto max-w-[1280px] px-6 md:px-10 lg:px-16">
-        <SectionEyebrow>Why choose stayli</SectionEyebrow>
+        <SectionEyebrow>Why us</SectionEyebrow>
         <h2 className="mt-3 max-w-2xl text-[clamp(1.75rem,4vw,2.5rem)] font-normal leading-tight tracking-[-0.03em]">
           Your trusted companion for memorable stays
         </h2>
