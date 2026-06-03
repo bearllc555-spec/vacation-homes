@@ -75,7 +75,8 @@ export function PropertyMapShowcase() {
   return (
     <section
       ref={sectionRef}
-      className="property-map-showcase relative left-1/2 w-screen -translate-x-1/2"
+      id="map"
+      className="property-map-showcase relative left-1/2 w-screen -translate-x-1/2 scroll-mt-20"
       aria-label="Lake Harmony satellite map"
     >
       <div className="relative h-[72vh] w-full md:h-[80vh] lg:h-[85vh]">
