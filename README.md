@@ -1,46 +1,44 @@
-# Vacation Homes
+# Vacation Homes (Stayli clone)
 
-Standalone vacation-rentals marketing site (**Shoreline Stays** design concept), built with **Vite**, **React 19**, and **Tailwind CSS**, deployed to **Cloudflare Pages**.
+Pixel-faithful static clone of [Stayli on Framer](https://stayli.framer.website/), deployed to **Cloudflare Pages**.
 
 ## Stack
 
-- Vite 7 + React 19 + TypeScript
-- Tailwind CSS 3
-- Cloudflare Pages + GitHub Actions
+- Framer SSR HTML (processed from `_stayli-source.html`)
+- Local assets in `public/images/`
+- Vite (static `index.html` → `dist/`)
+- GitHub Actions → Cloudflare Pages
 
 ## Design source
 
-- **Reference:** [Stayli on Framer](https://stayli.framer.website/) (listed in `998webdesigns.comX` portfolio as vacation-rentals inspiration)
-- **URL mode:** `root` (assumed until you specify otherwise)
-- **Version:** `v1.01` in header — bump `src/lib/version.ts` each iteration
+- **Reference:** https://stayli.framer.website/
+- **URL mode:** `root` (confirmed)
+- **Version:** `v1.02` in header (injected next to home logo)
+- **Fonts:** Inter (from Framer-hosted subsets in page CSS)
+
+## Regenerate from Framer
+
+```bash
+curl -sL "https://stayli.framer.website/" -o _stayli-source.html
+node scripts/process-stayli.mjs
+npm run build
+```
 
 ## Local development
 
 ```bash
 npm install
-npm run dev
-```
-
-Open http://localhost:5173
-
-## Build & preview
-
-```bash
 npm run build
 npm run preview
 ```
 
-Static output is written to `dist/`.
+Or after processing: `npx wrangler pages dev dist --port 8788`
 
 ## Deploy
 
-See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for branch URLs and secrets.
+See **[DEPLOYMENT.md](./DEPLOYMENT.md)**.
 
-| Branch | Cloudflare preview |
-|--------|-------------------|
+| Branch | Preview |
+|--------|---------|
 | `dev` | https://dev.vacation-homes.pages.dev |
 | `main` | https://vacation-homes.pages.dev |
-
-1. Work on **`dev`**; merge to **`main`** for production preview.
-2. GitHub secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
-3. Push — Actions deploys to Pages project **vacation-homes**.

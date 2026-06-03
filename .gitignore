@@ -1,5 +1,6 @@
 node_modules
 dist
+_stayli-full.png
 .wrangler
 *.local
 .env

@@ -2,7 +2,7 @@
 
 **GitHub:** https://github.com/bearllc555-spec/vacation-homes
 
-**Design source:** Stayli-style vacation rentals concept (`v1.01`); see README.
+**Design source:** Pixel clone of https://stayli.framer.website/ (`v1.02`); see README.
 
 ## Cloudflare Pages
 
@@ -12,7 +12,7 @@
 | **Production** | `main` | https://vacation-homes.pages.dev |
 
 - **Pages project:** `vacation-homes`
-- **URL mode:** `root` (single-page app at `/`) — confirm or change when you send final URL instructions
+- **URL mode:** `root` — site and assets at `/` (no mockup path prefix)
 - **Build output:** `./dist` (Vite production build)
 - **Account ID:** `e0f6f68f26f8a26a75eaa793385019ef`
 
