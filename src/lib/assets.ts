@@ -4,9 +4,9 @@ import { lodgingImages } from "./lodging-images";
 export const images = {
   logo: "/images/GprGteIPH00Jsm7vk0gDIa0mg.svg",
   hero: lodgingImages.poolRetreat,
-  introWide: lodgingImages.suiteInterior,
+  introWide: lodgingImages.deck,
   categoryRemote: lodgingImages.poolRetreat,
-  categoryFamily: lodgingImages.suiteInterior,
+  categoryFamily: lodgingImages.kitchen,
   aboutPortrait: lodgingImages.lakesideRoom,
   aboutWide: lodgingImages.mountainView,
   videoThumb: lodgingImages.suiteInterior,
